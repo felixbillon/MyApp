@@ -1,0 +1,21 @@
+name: CI
+
+on: push
+
+jobs:
+  lint:
+    name: lint
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo lint
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo test
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    needs: [lint, test]
+    steps:
+      - run: echo build
